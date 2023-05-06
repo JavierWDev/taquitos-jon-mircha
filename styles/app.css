@@ -1,0 +1,270 @@
+/* *******************************************
+               Custom Properties
+******************************************* */
+:root{
+    /* ***************************************
+                    Colors 
+    ************************************** */
+    /* *** Primary *** */
+    --background: #ebe9dd;
+    --info: #e4e4e4;
+    --headings: #494351;
+    --dividers: #5f5f5f;
+    --mexGreen: #2a8028;
+    --mexRed: #c01725;
+    /* *** Secondary *** */
+
+    /* ***************************************
+                    Fonts 
+    ************************************** */
+    --fuentePrincipal : 'Skranji', cursive;
+}
+
+/* *******************************************
+                   Globals
+******************************************* */
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--fuentePrincipal);
+    background-color: var(--background);
+    min-height: 100vh;
+    padding: 2rem 0;
+    background-image: url(../assets/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+h1{
+    text-align: center;
+    font-size: clamp( 2rem, 1rem + 5vw, 3.5rem );
+    letter-spacing: .4rem;
+    color: var(--headings);
+
+}
+
+/* *******************************************
+                    Styles
+******************************************* */
+
+.app{
+    background-color: var(--background);
+    display: flex;
+    width: 90%;
+    max-width: 100rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 0;
+    border-radius: 10px;
+    gap: 2rem;
+    box-shadow: 0 8px 32px 0 var(--dividers);
+    backdrop-filter: blur( 2.5px );
+    -webkit-backdrop-filter: blur( 2.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+
+/* Header */
+.header{
+    width: 90%;
+    display: flex;
+    gap: 1rem;
+}
+
+.header .header--line{
+    flex: .5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .header--line::after{
+    content: "";
+    display: flex;
+    width: 90%;
+    padding: .3rem 0;
+    border-top: .4rem solid var(--mexGreen);
+    border-bottom: .4rem solid var(--mexRed);
+}
+
+/* Info App */
+.info{
+    width: 90%;
+    max-width: 100rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.info a{
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--headings);
+}
+
+.info div{
+    border-bottom: 3px solid var(--headings);
+    background-color: var(--info);
+    margin-bottom: 1rem;
+    padding: 2rem ;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.info h3{
+    font-size: 2.5rem;
+    padding: 1rem 0;
+    color: var(--headings);
+}
+
+/* App tacos */
+.tacos{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 80%;
+    max-width: 90rem;
+    gap: 2rem;
+}
+
+.tacos h2{
+    font-size: 3rem;
+    text-align: center;
+    color: var(--headings);
+}
+
+.taco{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+}
+
+.taco__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.taco h3{
+    padding: 1rem 0;
+    font-size: 2rem;
+    color: var(--headings);
+}
+
+.taco__data{
+    display: flex;
+    flex-direction: column;
+}
+
+.taco p{
+    color: var(--dividers);
+    font-family: sans-serif;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+.taco button{
+    padding: 1rem 0;
+    width: 90%;
+    max-width: 30rem;
+    font-size: 1.6rem;
+    margin: 1rem auto 0 auto;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .2s transform;
+    background-color: var(--headings);
+    color: var(--background);
+}
+
+.taco button:hover{
+    transform: scale(1.025);
+}
+
+@media (min-width: 620px) {
+    .taco{
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .taco__img{
+        width: 10rem;
+    }
+
+    .taco__img img{
+        height: unset;
+        object-fit: cover;
+        height: 10rem;
+        width: 10rem;
+        border-radius: 50%;
+    }
+
+    .taco__data h3{
+        padding-top: 0;
+    }
+
+    .taco__data button{
+        margin: 1.5rem 0 0 0;
+    }
+}
+
+@media (min-width: 800px) {
+    .taco__data{
+        flex-direction: row;
+    }
+
+    .taco__data div{
+        flex: 1.5;
+    }
+
+    .taco__data button{
+        display: block;
+        flex: .5;
+        height: 4rem;
+        margin-top: 0;
+    }
+}
+
+.success{
+    max-width: 70rem;
+}
+
+.success h1{
+    color: var(--mexGreen);
+}
+
+.success img{
+    width: 90%;
+    border-radius: 50%;
+    max-width: 30rem;
+}
+
+.success p{
+    width: 90%;
+    color: var(--headings);
+    text-align: center;
+    font-size: 2rem;
+}
+
+.error h1{
+    color: var(--mexRed);
+}

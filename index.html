@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout con Stripe</title>
+
+    <!-- Link al Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Skranji:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/app.css">
+
+</head>
+<body>
+
+    <main class="app">
+        <header class="header">
+            <div class="header--line"></div>
+            <h1>Taquitos pa' Jon Mircha</h1> 
+            <div class="header--line"></div>
+        </header>
+
+        <section class="info">
+            <div>
+                <h3>¿De qué trata este proyecto?</h3>
+                <p>Este proyecto es parte del curso de ejercicios de Javascript dictado por el profesor <a target="_blank" href="https://jonmircha.com/">Jon Mircha</a></p>
+                <br>
+                <p><b>Taquitos pa' Jon Mircha</b> funciona conectandose a la <b>API de Stripe simulando la venta de productos</b></p>
+            </div>
+            <div>
+                <h3>¿Cómo funciona?</h3>
+                <p>Al seleccionar el precio de un producto, este redireccionará a la página de Stripe la cual solicitará al usuario información de la tarjeta a utilizar para generar el pago.</p>
+                <br>
+                <p>Para realizar un "pago", <b>utilice la siguiente tarjeta</b> proporcionada por la API de Stripe: <b>4242 4242 4242 4242</b></p>
+                <br>
+                <p>En el <b>CVC</b> ingresar: <b>456</b></p>
+                <br>
+                <p>En <b>MM/AA</b> ingresar una fecha de vigencia alejada a la actual: <b><span id="fecha-vigencia"></span></b></p>
+            </div>
+        </section>
+    
+        <section id="tacos" class="tacos">
+
+            <h2>Seleccione un Taquito para Jon :D</h2>
+
+            <template id="taco-template">
+                <div class="taco">
+                    <figure class="taco__img">
+                        <img src="" alt="">
+                    </figure>
+
+                    <div class="taco__data">   
+                        <div>
+                            <h3>Regular Taco</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, beatae!</p>
+                        </div>
+        
+                        <button class="price"></button>
+                    </div>
+                </div>
+            </template>
+    
+        </section>
+    </main>
+
+    <!-- Invocando Script de Stripe v3 -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="js/app.js" type="module"></script>
+
+</body>
+</html>
